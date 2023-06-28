@@ -1,0 +1,159 @@
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between headersFilter" (click)="toggleCategories()">
+            <h5 class="txt">Categories</h5>
+            <span class="icon" [ngClass]="iconCategories"></span>
+        </div>
+        <hr class="m-0">
+        <div class="contentCategories mt-3" [class.show]="showCategories">
+            <div class="categoryBox my-1">
+                <input class="checkboxFilter" type="checkbox" name="Digital Transformation"
+                    value="Digital Transformation" (change)="onCheckboxChange('digitalTransformation', $event)">
+                <span>Digital Transformation ({{categoryCounts.digitalTransformation}})</span>
+            </div>
+            <div class="categoryBox my-1">
+                <input class="checkboxFilter" type="checkbox" name="Financial Services" value="Financial Services"
+                    (change)="onCheckboxChange('financialServices', $event)">
+                <span>Financial Services ({{categoryCounts.financialServices}})</span>
+            </div>
+            <div class="categoryBox my-1">
+                <input class="checkboxFilter" type="checkbox" name="Health" value="Health"
+                    (change)="onCheckboxChange('health', $event)">
+                <span>Health ({{categoryCounts.health}})</span>
+            </div>
+            <div class="categoryBox my-1">
+                <input class="checkboxFilter" type="checkbox" name="Leadership" value="Leadership"
+                    (change)="onCheckboxChange('leadership', $event)">
+                <span>Leadership ({{categoryCounts.leadership}})</span>
+            </div>
+            <div class="categoryBox my-1">
+                <input class="checkboxFilter" type="checkbox" name="Manufacturing" value="Manufacturing"
+                    (change)="onCheckboxChange('manufacturing', $event)">
+                <span>Manufacturing ({{categoryCounts.manufacturing}})</span>
+            </div>
+            <div class="categoryBox my-1">
+                <input class="checkboxFilter" type="checkbox" name="Telco & Media" value="Telco & Media"
+                    (change)="onCheckboxChange('telcoYMedia', $event)">
+                <span>Telco & Media ({{categoryCounts.telcoYMedia}})</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="d-flex justify-content-between headersFilter" (click)="toggleKeywords()">
+            <h5 class="txt">Keywords</h5>
+            <span class="icon" [ngClass]="iconKeywords"></span>
+        </div>
+        <hr class="m-0">
+        <div class="contentKeywords mt-3" [class.show]="showKeywords">
+            <input class="checkboxFilter" type="checkbox" id="financial" style="display:none"
+                (change)="onKeywordClick('financial', $event)">
+            <label for="financial" class="badge rounded-pill badge-custom">Financial</label>
+
+            <input class="checkboxFilter" type="checkbox" id="analytics" style="display:none"
+                (change)="onKeywordClick('analytics', $event)">
+            <label for="analytics" class="badge rounded-pill badge-custom">Analytics</label>
+
+            <input class="checkboxFilter" type="checkbox" id="bigData" style="display:none"
+                (change)="onKeywordClick('bigData', $event)">
+            <label for="bigData" class="badge rounded-pill badge-custom">Big data</label>
+
+            <input class="checkboxFilter" type="checkbox" id="consumer" style="display:none"
+                (change)="onKeywordClick('consumer', $event)">
+            <label for="consumer" class="badge rounded-pill badge-custom">Consumer</label>
+
+            <input class="checkboxFilter" type="checkbox" id="digital" style="display:none"
+                (change)="onKeywordClick('digital', $event)">
+            <label for="digital" class="badge rounded-pill badge-custom">Digital</label>
+
+            <input class="checkboxFilter" type="checkbox" id="energy" style="display:none"
+                (change)="onKeywordClick('energy', $event)">
+            <label for="energy" class="badge rounded-pill badge-custom">Energy</label>
+
+            <input class="checkboxFilter" type="checkbox" id="innovation" style="display:none"
+                (change)="onKeywordClick('innovation', $event)">
+            <label for="innovation" class="badge rounded-pill badge-custom">Innovation</label>
+
+            <input class="checkboxFilter" type="checkbox" id="leadership" style="display:none"
+                (change)="onKeywordClick('leadership', $event)">
+            <label for="leadership" class="badge rounded-pill badge-custom">Leadership</label>
+
+            <input class="checkboxFilter" type="checkbox" id="telecommunications" style="display:none"
+                (change)="onKeywordClick('telecommunications', $event)">
+            <label for="telecommunications" class="badge rounded-pill badge-custom">Telecommunications</label>
+
+            <input class="checkboxFilter" type="checkbox" id="transformation" style="display:none"
+                (change)="onKeywordClick('transformation', $event)">
+            <label for="transformation" class="badge rounded-pill badge-custom">Transformation</label>
+
+            <input class="checkboxFilter" type="checkbox" id="uX" style="display:none"
+                (change)="onKeywordClick('uX', $event)">
+            <label for="uX" class="badge rounded-pill badge-custom">UX</label>
+
+            <input class="checkboxFilter" type="checkbox" id="web" style="display:none"
+                (change)="onKeywordClick('web', $event)">
+            <label for="web" class="badge rounded-pill badge-custom">Web</label>
+        </div>
+    </div>
+</div>
+
+
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="d-flex justify-content-between headersFilter" (click)="toggleDate()">
+            <h5 class="txt">Date</h5>
+            <span class="icon" [ngClass]="iconDate"></span>
+        </div>
+        <hr class="m-0">
+        <div class="contentDate mt-3" [class.show]="showDate">
+            <div class="dateBox">
+                <input id="filterDD5" class="radioFilter" type="radio" name="dateFilter" value="all"
+                    (change)="filterByDate('all')" checked>
+                <span id="filterD5"> All</span>
+            </div>
+
+            <div class="dateBox">
+                <input id="filterDD1" class="radioFilter" type="radio" name="dateFilter" value="semana"
+                    (change)="filterByDate('semana')">
+                <span id="filterD1"> This week</span>
+            </div>
+
+            <div class="dateBox">
+                <input id="filterDD2" class="radioFilter" type="radio" name="dateFilter" value="mes"
+                    (change)="filterByDate('mes')">
+                <span id="filterD2"> This month</span>
+            </div>
+
+            <div class="dateBox">
+                <input id="filterDD3" class="radioFilter" type="radio" name="dateFilter" value="anio"
+                    (change)="filterByDate('anio')">
+                <span id="filterD3"> This year</span>
+            </div>
+
+            <div class="dateBox">
+                <input id="filterDD4" class="radioFilter" type="radio" name="dateFilter" value="custom"
+                    (change)="filterByDate('custom')">
+                <span id="filterD4"> Custom date</span>
+            </div>
+
+            <div class="row mt-1" [ngClass]="{'show': isCustomSelected, 'hide': !isCustomSelected}">
+                <div class="col-6">
+                    <small>Since</small>
+                    <input placeholder="Since" type="date" [(ngModel)]="startDate" class="dateControl"
+                        style="width: 100%;">
+                </div>
+                <div class="col-6">
+                    <small>Until</small>
+                    <input placeholder="Until" type="date" [(ngModel)]="endDate" class="dateControl"
+                        style="width: 100%;">
+                </div>
+            </div>
+            <div class="row" [ngClass]="{'show': isCustomSelected, 'hide': !isCustomSelected}">
+                <button class="mt-1 btn btn-secondary btn-sm" (click)="filterByDate('custom')">Buscar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
