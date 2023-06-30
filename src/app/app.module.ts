@@ -39,7 +39,7 @@ export class AppModule {
   constructor(private injector: Injector) { };
   ngDoBootstrap() {
     const appElement = createCustomElement(AppComponent, { injector: this.injector });
-    customElements.define("portlet-press-angular", appElement);
+    customElements.define("portlet-press", appElement);
   }
 }
 

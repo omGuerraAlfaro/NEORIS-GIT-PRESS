@@ -7,7 +7,7 @@ import { ViewStateService } from './services/state-service.service';
 declare const Liferay: any;
 
 @Component({
-  selector: 'portlet-press-angular',
+  selector: 'portlet-press',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -16,8 +16,6 @@ export class AppComponent implements OnInit {
   hideLeftContent = true;
   changeSizeContent = true;
   
-
-  title = 'search-portlet-neoris';
   token?: string;
   private readonly LIFERAY_API = '/o/c/presses/';
 
