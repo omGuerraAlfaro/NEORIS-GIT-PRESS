@@ -105,7 +105,7 @@ export class BlogContentComponent {
 
   goToBlogDetail(blog: any) {
     const blogId = blog.id;
-    window.location.href = `/web/neoris/blog-detail?id=${blogId}`;
+    window.location.href = `/web/neoris/press-detail?id=${blogId}`;
   }
 
 }
