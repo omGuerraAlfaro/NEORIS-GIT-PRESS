@@ -14,7 +14,7 @@ declare const Liferay: any;
 })
 export class BlogContentComponent {
   token?: string;
-  private readonly LIFERAY_API_PUT = 'http://192.168.1.32:8080/o/c/presses/';
+  private readonly LIFERAY_API_PUT = '/o/c/presses/';
   //views
   changeSizeContent2 = true;
   changeSizeContent3 = true;
@@ -31,12 +31,10 @@ export class BlogContentComponent {
   ngOnInit(): void {
     this.blogsSubscription = this.blogService.blogs$.subscribe(blogs => {
       this.contentBlog = blogs;
-      // console.log(blogs);
     });
 
     this.blogsSubscription = this.blogService.filteredBlogs$.subscribe(blogs => {
       this.contentBlog = blogs;
-      console.log(blogs);
     });
 
 
@@ -46,17 +44,22 @@ export class BlogContentComponent {
       if (state === 0) {
         this.showCardContent = true;
         this.changeSizeContent2 = true;
+        this.changeSizeContent3 = true;
       }
       if (state === 1) {
         this.showCardContent = true;
         this.changeSizeContent2 = true;
+        this.changeSizeContent3 = true;
       }
       if (state === 2) {
         this.showCardContent = false;
         this.changeSizeContent2 = false;
+        this.changeSizeContent3 = true;
       }
       if (state === 3) {
         this.showCardContent = false;
+        this.changeSizeContent2 = true;
+        this.changeSizeContent3 = false;
       }
     });
     /* ******************************************** */
@@ -98,6 +101,11 @@ export class BlogContentComponent {
     } else {
       console.error('Token is not defined');
     }
+  }
+
+  goToBlogDetail(blog: any) {
+    const blogId = blog.id;
+    window.location.href = `/web/neoris/blog-detail?id=${blogId}`;
   }
 
 }

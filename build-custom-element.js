@@ -7,8 +7,8 @@ const concat = require('concat');
     './dist/search-portlet-neoris/main.js'
   ];
   await fs.ensureDir('angular-elements-build');
-  await fs.removeSync('angular-elements-build/angular-elements.js');
-  await concat(files, 'angular-elements-build/angular-elements.js');
+  await fs.removeSync('angular-elements-build/portlet-press.js');
+  await concat(files, 'angular-elements-build/portlet-press.js');
 
   await fs.copy('./src/app/app.component.css', 'angular-elements-build/styles.css');
 })();

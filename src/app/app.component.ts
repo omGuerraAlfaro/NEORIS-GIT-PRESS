@@ -7,7 +7,7 @@ import { ViewStateService } from './services/state-service.service';
 declare const Liferay: any;
 
 @Component({
-  selector: 'search-portlet-neoris',
+  selector: 'portlet-press-angular',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
   title = 'search-portlet-neoris';
   token?: string;
-  private readonly LIFERAY_API = 'http://192.168.1.32:8080/o/c/presses/';
+  private readonly LIFERAY_API = '/o/c/presses/';
 
   constructor(private http: HttpClient, private blogService: BlogService, private viewStateService: ViewStateService) { }
 
